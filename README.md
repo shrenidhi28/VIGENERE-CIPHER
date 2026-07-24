@@ -31,6 +31,72 @@ STEP-8: Repeat the above steps to generate the entire cipher text.
 
 ## PROGRAM
 
+```
+#include <stdio.h>
+#include <string.h>
+
+// Function to perform Vigenere encryption
+void vigenereEncrypt(char *text, const char *key)
+{
+    int textLen = strlen(text);
+    int keyLen = strlen(key);
+
+    for (int i = 0; i < textLen; i++)
+    {
+        char c = text[i];
+
+        if (c >= 'A' && c <= 'Z')
+        {
+            text[i] = ((c - 'A' + (key[i % keyLen] - 'A')) % 26) + 'A';
+        }
+        else if (c >= 'a' && c <= 'z')
+        {
+            text[i] = ((c - 'a' + (key[i % keyLen] - 'A')) % 26) + 'a';
+        }
+    }
+}
+
+// Function to perform Vigenere decryption
+void vigenereDecrypt(char *text, const char *key)
+{
+    int textLen = strlen(text);
+    int keyLen = strlen(key);
+
+    for (int i = 0; i < textLen; i++)
+    {
+        char c = text[i];
+
+        if (c >= 'A' && c <= 'Z')
+        {
+            text[i] = ((c - 'A' - (key[i % keyLen] - 'A') + 26) % 26) + 'A';
+        }
+        else if (c >= 'a' && c <= 'z')
+        {
+            text[i] = ((c - 'a' - (key[i % keyLen] - 'A') + 26) % 26) + 'a';
+        }
+    }
+}
+
+int main()
+{
+    char message[] = "SECURITYLABORATORY";
+    const char *key = "KEY";
+
+    printf("Input Message      : %s\n", message);
+
+    vigenereEncrypt(message, key);
+    printf("Encrypted Message  : %s\n", message);
+
+    vigenereDecrypt(message, key);
+    printf("Decrypted Message  : %s\n", message);
+
+    return 0;
+}
+
+```
+
 ## OUTPUT
+<img width="544" height="410" alt="image" src="https://github.com/user-attachments/assets/b82f1e8d-a7ec-4ced-8b92-a17e167e72cd" />
 
 ## RESULT
+The Vigenere Cipher program was implemented successfully in C. The plaintext was encrypted using the given keyword and successfully decrypted back to the original message.
