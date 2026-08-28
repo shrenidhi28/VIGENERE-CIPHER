@@ -1,5 +1,4 @@
-# VIGENERE-CIPHER
-## EX. NO: 4
+# EX. NO: 4 VIGENERE-CIPHER
 ## Name: Shrenidhi
 ## Reg No: 212223040196
 ## Dept: CSE
@@ -8,9 +7,7 @@
 ## IMPLEMETATION OF VIGENERE CIPHER
  
 
-## AIM:
-
-To implement the Vigenere Cipher substitution technique using C program.
+## AIM: To implement the Vigenere Cipher substitution technique using C program.
 
 ## DESCRIPTION:
 
