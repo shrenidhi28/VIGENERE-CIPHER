@@ -1,37 +1,46 @@
-# EX. NO: 4 VIGENERE-CIPHER
-## Name: Shrenidhi
-## Reg No: 212223040196
-## Dept: CSE
- 
+**EX. NO: 4: IMPLEMENTATION OF VIGENERE CIPHER**
 
-## IMPLEMETATION OF VIGENERE CIPHER
- 
+**Name:** Shrenidhi
 
-## AIM: To implement the Vigenere Cipher substitution technique using C program.
+**Reg No:** 212223040196
 
-## DESCRIPTION:
+**Dept:** CSE
 
-To encrypt, a table of alphabets can be used, termed a tabula recta, Vigenère square,or Vigenère table. It consists of the alphabet written out 26 times in differnt rows, each
- 
-alphabet shifted cyclically to the left compared to the previous alphabet, corresponding to the 26 possible Caesar ciphers. At different points in the encryption process, the cipher uses adifferent alphabet from one of the rows. The alphabet used at each point repeating keyword.depends on a Each row starts with a key letter. The remainder of the row holds the letters A to Z. Although there are 26 key rows shown, you will only use as many keys as there are unique letters in the key string, here just 5 keys, {L, E, M, O, N}. For successive letters of the message, we are going to take successive letters of the key string, and encipher each message letter using its corresponding key row. Choose the next letter of the key, go along that row to find the column heading that	atches the message character; the letter at the intersection of
-[key-row, msg-col] is the enciphered letter.
+**AIM:**
 
+To implement the Vigenere Cipher substitution technique using a C program.
 
-## ALGORITHM:
+**DESCRIPTION:**
 
-STEP-1: Arrange the alphabets in row and column of a 26*26 matrix.
-STEP-2: Circulate the alphabets in each row to position left such that the first letter is attached to last.
-STEP-3: Repeat this process for all 26 rows and construct the final key matrix.
-STEP-4: The keyword and the plain text is read from the user.
-STEP-5: The characters in the keyword are repeated sequentially so as to match with that of the plain text.
-STEP-6: Pick the first letter of the plain text and that of the keyword as the row indices and column indices respectively.
-STEP-7: The junction character where these two meet forms the cipher character.
-STEP-8: Repeat the above steps to generate the entire cipher text.
+The Vigenere Cipher is a substitution cipher that uses a table of alphabets called the **Tabula Recta**, **Vigenere Square**, or **Vigenere Table**.
 
+The table consists of the alphabet written 26 times in different rows. Each row is shifted cyclically to the left compared to the previous row, representing the 26 possible Caesar Ciphers.
 
-## PROGRAM
+During encryption, a repeating keyword is used. Each letter of the plaintext is encrypted using the corresponding letter of the keyword. The keyword is repeated until it matches the length of the plaintext.
 
-```
+For each plaintext character, the corresponding key character determines the shift value. The encrypted character is obtained by shifting the plaintext character according to the corresponding keyword character.
+
+**ALGORITHM:**
+
+**STEP 1:** Arrange the alphabets in rows and columns of a 26 × 26 matrix.
+
+**STEP 2:** Shift the alphabets cyclically in each row to construct the Vigenere table.
+
+**STEP 3:** Repeat the process for all 26 rows to construct the complete key matrix.
+
+**STEP 4:** Read the keyword and plaintext.
+
+**STEP 5:** Repeat the characters of the keyword sequentially until they match the length of the plaintext.
+
+**STEP 6:** Take the corresponding letters of the plaintext and keyword.
+
+**STEP 7:** Apply the Vigenere Cipher encryption formula to generate the cipher character.
+
+**STEP 8:** Repeat the process for all characters to generate the complete cipher text.
+
+**PROGRAM:**
+
+```c id="vf8zqw"
 #include <stdio.h>
 #include <string.h>
 
@@ -92,11 +101,12 @@ int main()
 
     return 0;
 }
-
 ```
 
-## OUTPUT
+**OUTPUT:**
+
 <img width="544" height="410" alt="image" src="https://github.com/user-attachments/assets/b82f1e8d-a7ec-4ced-8b92-a17e167e72cd" />
 
-## RESULT
-The Vigenere Cipher program was implemented successfully in C. The plaintext was encrypted using the given keyword and successfully decrypted back to the original message.
+**RESULT:**
+
+The Vigenere Cipher program was successfully implemented using C. The plaintext was encrypted using the given keyword and successfully decrypted back to the original message.
